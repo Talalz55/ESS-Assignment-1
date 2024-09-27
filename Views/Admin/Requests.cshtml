@@ -1,1 +1,34 @@
-﻿
+﻿@model IEnumerable<Assignment_1.Models.EquipmentRequest>
+
+@{
+    ViewData["Title"] = "Admin Requests Listing";
+}
+
+<div>
+    <h2>Requests Listing</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Equipment Type</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model)
+            {
+                <tr>
+                    <td>@request.Equipment</td>
+                    <td>@request.Name</td>
+                    <td>@request.Role</td>
+                    <td>
+                        <button class="btn btn-success">Accept</button>
+                        <button class="btn btn-danger">Deny</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
